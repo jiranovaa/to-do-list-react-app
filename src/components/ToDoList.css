@@ -1,6 +1,19 @@
-h1 {
+@keyframes color-change {
+    0%, 100% {
+      color:#48494B;
+    }
+    50% {
+      color:#C70039;
+      font-size: 2.5em;
+      transform: rotate(360deg);
+    }
+}
+
+h2 {
+    font-size: 2em;
     text-align: center;
-  }  
+    animation: color-change 4s;
+}  
 
 form {
     width: 100%;

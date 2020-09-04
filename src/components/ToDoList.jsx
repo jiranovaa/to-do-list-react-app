@@ -5,10 +5,17 @@ import Item from '../components/Item';
 class ToDoList extends React.Component {
   constructor() {
     super()
+    
+    let items = [];
+    const lsItems = localStorage.getItem('items');
+    if (lsItems) {
+      items = JSON.parse(lsItems);
+    }
+    
     this.state = {
       InputValue: '',
       ButtonDisabled: true,
-      items: []
+      items: items
     }
   }
 
@@ -21,11 +28,13 @@ class ToDoList extends React.Component {
 
   onButtonSubmit = (event) => {
     event.preventDefault();
+    let newItems = [...this.state.items, {id: Date.now(), date: new Date().toLocaleString(), title: this.state.InputValue}];
     this.setState({
       InputValue: '',
       ButtonDisabled: true,
-      items: [...this.state.items, {id: Date.now(), date: new Date().toLocaleString(), title: this.state.InputValue}]
+      items: newItems
     });
+    localStorage.setItem('items', JSON.stringify(newItems));
   }
 
   handleDelete = itemId => {
@@ -49,13 +58,14 @@ class ToDoList extends React.Component {
   render() {
     return (
         <div className='todo-container'>
-            <h1>TO DO List</h1> 
+            <h2>TO DO List</h2> 
             <form onSubmit={this.onButtonSubmit}>
                 <input 
                     className='input-field'
                     value={this.state.InputValue}
                     onChange={this.onInputChange}
                     type='text'
+                    maxLength='40'
                     placeholder='Add a new TO DO'
                 />
                 <input 
