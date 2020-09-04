@@ -1,3 +1,53 @@
+.container {
+  background-color: #f7f7f7;
+  width: 500px;
+  margin: 50px auto;
+  padding: 2px 30px;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  background-color: #f7f7f7;
+  width: 500px;
+  margin: 50px auto;
+  padding: 2px 30px;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+}
+
+.input-field {
+  font-family: inherit;
+  font-size: 1em;
+  color: inherit;
+  width: 80%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 4px;
+  box-sizing: border-box;
+  border: none;
+}
+
+.add-button {
+  font-family: inherit;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #f7f7f7;
+  background-color: #CC397B;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
 .btn {
   background-color: DodgerBlue;
   border: none;
